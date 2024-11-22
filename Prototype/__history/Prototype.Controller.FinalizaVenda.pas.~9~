@@ -1,0 +1,51 @@
+unit Prototype.Controller.FinalizaVenda;
+
+interface
+
+uses Prototype.Controller.Interfaces, System.Generics.Collections;
+
+type
+
+  TModelFinalizaVenda = class(TInterfacedObject, iFinalizaVenda)
+  private
+    FLista: TList<iVenda>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iFinalizaVenda;
+    function Finalizar(Value: iVenda): iFinalizaVenda;
+    function FormaPagamento: iFormaPagamento;
+  end;
+
+implementation
+
+{ TModelFinalizaVenda }
+
+constructor TModelFinalizaVenda.Create;
+begin
+
+end;
+
+destructor TModelFinalizaVenda.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelFinalizaVenda.Finalizar(Value: iVenda): iFinalizaVenda;
+begin
+  Result := Self;
+  FLista.add
+end;
+
+function TModelFinalizaVenda.FormaPagamento: iFormaPagamento;
+begin
+
+end;
+
+class function TModelFinalizaVenda.New: iFinalizaVenda;
+begin
+  Result := Self.Create;
+end;
+
+end.

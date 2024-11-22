@@ -1,0 +1,13 @@
+unit Prototype.Controller.FinalizaVenda;
+
+interface
+
+uses Prototype.Controller.Interfaces;
+
+type
+
+  TModelFinalizaVenda = class(TInterfacedObject, )
+
+implementation
+
+end.

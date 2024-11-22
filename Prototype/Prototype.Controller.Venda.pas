@@ -15,6 +15,7 @@ type
     class function New: iVenda;
     function Add(Value: TList<iITens>): iVenda;
     function Total: Currency;
+
   end;
 
 implementation
@@ -51,8 +52,6 @@ begin
   Result := 0;
   for I := 0 to Pred(FItens.Count) do
     Result := Result + FItens[I].Total;
-
-
 
 end;
 

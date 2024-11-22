@@ -1,0 +1,11 @@
+unit Prototype.Controller.FinalizaVenda;
+
+interface
+
+type
+
+  TModelFinalizaVenda = class(tin)
+
+implementation
+
+end.

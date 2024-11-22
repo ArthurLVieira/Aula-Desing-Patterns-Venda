@@ -7,7 +7,8 @@ uses
   Prototype.Controller.Itens in 'Prototype.Controller.Itens.pas',
   Prototype.Controller.Interfaces in 'Prototype.Controller.Interfaces.pas',
   Prototype.Model.Strategy in 'Prototype.Model.Strategy.pas',
-  Prototype.Controller.Venda in 'Prototype.Controller.Venda.pas';
+  Prototype.Controller.Venda in 'Prototype.Controller.Venda.pas',
+  Prototype.Controller.FinalizaVenda in 'Prototype.Controller.FinalizaVenda.pas';
 
 {$R *.res}
 

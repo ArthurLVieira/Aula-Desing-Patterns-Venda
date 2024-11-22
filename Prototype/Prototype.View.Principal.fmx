@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 308
-  ClientWidth = 710
+  ClientHeight = 629
+  ClientWidth = 719
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -46,13 +46,13 @@ object Form1: TForm1
   object Memo1: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
-    Position.X = 296.000000000000000000
+    Position.X = 288.000000000000000000
     Position.Y = 56.000000000000000000
-    Size.Width = 265.000000000000000000
+    Size.Width = 353.000000000000000000
     Size.Height = 174.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 6
-    Viewport.Width = 261.000000000000000000
+    Viewport.Width = 349.000000000000000000
     Viewport.Height = 170.000000000000000000
   end
   object Edit3: TEdit
@@ -91,7 +91,7 @@ object Form1: TForm1
   object Label4: TLabel
     Position.X = 296.000000000000000000
     Position.Y = 238.000000000000000000
-    Size.Width = 265.000000000000000000
+    Size.Width = 345.000000000000000000
     Size.Height = 27.000000000000000000
     Size.PlatformDefault = False
     TextSettings.HorzAlign = Center

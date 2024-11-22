@@ -1,0 +1,20 @@
+unit Prototype.Controller.FinalizaVenda;
+
+interface
+
+uses Prototype.Controller.Interfaces;
+
+type
+
+  TModelFinalizaVenda = class(TInterfacedObject, iFinalizaVenda)
+    private
+
+    public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iFinalizaVenda;
+  end;
+
+implementation
+
+end.
