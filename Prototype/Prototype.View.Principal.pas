@@ -24,6 +24,10 @@ type
     Label4: TLabel;
     Edit4: TEdit;
     Label5: TLabel;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);

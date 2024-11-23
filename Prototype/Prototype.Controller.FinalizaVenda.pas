@@ -8,40 +8,37 @@ type
 
   TModelFinalizaVenda = class(TInterfacedObject, iFinalizaVenda)
   private
+    FFormaPagamento: string;
     FlistaVenda: TDictionary<string, ivenda>;
-    FLista: TList<ivenda>;
   public
     constructor Create;
     destructor Destroy; override;
     class function New: iFinalizaVenda;
-    function Finalizar(Value: ivenda): iFinalizaVenda;
-    function FormaPagamento: iFormaPagamento;
+    function Finalizar(Value: iFormaPagamento): iFinalizaVenda;
   end;
 
 implementation
+
+uses
+  System.SysUtils;
 
 { TModelFinalizaVenda }
 
 constructor TModelFinalizaVenda.Create;
 begin
-
+  FlistaVenda := TDictionary<string, iVenda>.Create;
 end;
 
 destructor TModelFinalizaVenda.Destroy;
 begin
+  FreeAndNil(FlistaVenda);
 
   inherited;
 end;
 
-function TModelFinalizaVenda.Finalizar(Value: ivenda): iFinalizaVenda;
+function TModelFinalizaVenda.Finalizar(Value: iFormaPagamento): iFinalizaVenda;
 begin
   Result := Self;
-  FLista.Add(Value);
-end;
-
-function TModelFinalizaVenda.FormaPagamento: iFormaPagamento;
-begin
-  //Result := Self;
 end;
 
 class function TModelFinalizaVenda.New: iFinalizaVenda;

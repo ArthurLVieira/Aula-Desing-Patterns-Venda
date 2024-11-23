@@ -1,6 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  ActiveControl = Edit1
   Caption = 'Form1'
   ClientHeight = 629
   ClientWidth = 719
@@ -23,9 +24,9 @@ object Form1: TForm1
   end
   object Button1: TButton
     Position.X = 28.000000000000000000
-    Position.Y = 243.000000000000000000
+    Position.Y = 273.000000000000000000
     Size.Width = 100.000000000000000000
-    Size.Height = 22.000000000000000000
+    Size.Height = 27.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
     Text = 'Vender'
@@ -33,10 +34,10 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Position.X = 168.000000000000000000
-    Position.Y = 243.000000000000000000
+    Position.X = 160.000000000000000000
+    Position.Y = 273.000000000000000000
     Size.Width = 100.000000000000000000
-    Size.Height = 22.000000000000000000
+    Size.Height = 27.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
     Text = 'Clonar'
@@ -49,11 +50,11 @@ object Form1: TForm1
     Position.X = 288.000000000000000000
     Position.Y = 56.000000000000000000
     Size.Width = 353.000000000000000000
-    Size.Height = 174.000000000000000000
+    Size.Height = 209.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 6
     Viewport.Width = 349.000000000000000000
-    Viewport.Height = 170.000000000000000000
+    Viewport.Height = 205.000000000000000000
   end
   object Edit3: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -89,9 +90,9 @@ object Form1: TForm1
     TabOrder = 11
   end
   object Label4: TLabel
-    Position.X = 296.000000000000000000
-    Position.Y = 238.000000000000000000
-    Size.Width = 345.000000000000000000
+    Position.X = 288.000000000000000000
+    Position.Y = 273.000000000000000000
+    Size.Width = 353.000000000000000000
     Size.Height = 27.000000000000000000
     Size.PlatformDefault = False
     TextSettings.HorzAlign = Center
@@ -111,5 +112,41 @@ object Form1: TForm1
     Size.PlatformDefault = False
     Text = 'Quantidade:'
     TabOrder = 9
+  end
+  object Button3: TButton
+    Position.X = 28.000000000000000000
+    Position.Y = 329.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+    Text = 'Dinheiro'
+  end
+  object Button4: TButton
+    Position.X = 28.000000000000000000
+    Position.Y = 367.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    Text = 'D'#233'bito'
+  end
+  object Button5: TButton
+    Position.X = 28.000000000000000000
+    Position.Y = 405.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 15
+    Text = 'Cr'#233'dito'
+  end
+  object Button6: TButton
+    Position.X = 28.000000000000000000
+    Position.Y = 443.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Text = 'Pix'
   end
 end

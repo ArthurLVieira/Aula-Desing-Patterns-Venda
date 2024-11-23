@@ -40,19 +40,20 @@ type
     function Total: Currency;
   end;
 
-  iFinalizaVenda = interface
-    ['{CE1A23D9-D802-466A-96B9-9F90B1DE212E}']
-    function Finalizar(Value: iVenda): iFinalizaVenda;
-    function FormaPagamento: iFormaPagamento;
+    iFormaPagamento = interface
+    ['{3E6AE97B-C1AA-4A89-8155-C4808ED80DCB}']
+    function Pix(Value: iVenda): iFormaPagamento;
+    function Dinheriro(Value: iVenda): iFormaPagamento;
+    function CartaoCredito(Value: iVenda): iFormaPagamento;
+    function CartaoDebito(Value: iVenda): iFormaPagamento;
   end;
 
-  iFormaPagamento = interface
-    ['{3E6AE97B-C1AA-4A89-8155-C4808ED80DCB}']
-    function Pix: iFormaPagamento;
-    function Dinheriro: iFormaPagamento;
-    function CartaoCredito: iFormaPagamento;
-    function CartaoDebito: iFormaPagamento;
+  iFinalizaVenda = interface
+    ['{CE1A23D9-D802-466A-96B9-9F90B1DE212E}']
+    function Finalizar(Value: iFormaPagamento): iFinalizaVenda;
   end;
+
+
 
 implementation
 
