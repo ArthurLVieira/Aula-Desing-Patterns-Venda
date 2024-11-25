@@ -6,15 +6,16 @@ uses Prototype.Controller.Interfaces, System.Generics.Collections;
 
 type
 
-  TModelFinalizaVenda = class(TInterfacedObject, iFinalizaVenda)
+  TModelFinalizaVenda = class(TInterfacedObject, iFinalizaVenda, iFormaPagamento)
   private
     FFormaPagamento: string;
-    FlistaVenda: TDictionary<string, ivenda>;
+    FlistaVenda: TDictionary<TList<string>, ivenda>;
   public
     constructor Create;
     destructor Destroy; override;
     class function New: iFinalizaVenda;
     function Finalizar(Value: iFormaPagamento): iFinalizaVenda;
+    function formaPagamento: iFormaPagamento;
   end;
 
 implementation
@@ -37,6 +38,11 @@ begin
 end;
 
 function TModelFinalizaVenda.Finalizar(Value: iFormaPagamento): iFinalizaVenda;
+begin
+  Result := Self;
+end;
+
+function TModelFinalizaVenda.formaPagamento: iFormaPagamento;
 begin
   Result := Self;
 end;

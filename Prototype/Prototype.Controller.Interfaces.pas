@@ -50,7 +50,9 @@ type
 
   iFinalizaVenda = interface
     ['{CE1A23D9-D802-466A-96B9-9F90B1DE212E}']
+    function TotalVenda
     function Finalizar(Value: iFormaPagamento): iFinalizaVenda;
+    function formaPagamento: iFormaPagamento;
   end;
 
 

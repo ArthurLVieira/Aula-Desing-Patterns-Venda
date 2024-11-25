@@ -1,0 +1,11 @@
+unit Prototype.Model.Forma.Dinheiro;
+
+interface
+
+type
+
+  TModelFormaDinheiro = class(tinter)
+
+implementation
+
+end.
