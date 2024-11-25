@@ -42,15 +42,15 @@ type
 
     iFormaPagamento = interface
     ['{3E6AE97B-C1AA-4A89-8155-C4808ED80DCB}']
-    function Pix(Value: iVenda): iFormaPagamento;
-    function Dinheriro(Value: iVenda): iFormaPagamento;
-    function CartaoCredito(Value: iVenda): iFormaPagamento;
-    function CartaoDebito(Value: iVenda): iFormaPagamento;
+    function Pix(Value: Currency): iFormaPagamento;
+    function Dinheriro(Value: Currency): iFormaPagamento;
+    function CartaoCredito(Value: Currency): iFormaPagamento;
+    function CartaoDebito(Value: Currency): iFormaPagamento;
   end;
 
   iFinalizaVenda = interface
     ['{CE1A23D9-D802-466A-96B9-9F90B1DE212E}']
-    function TotalVenda
+    function TotalVenda(Value: iVenda): iFinalizaVenda;
     function Finalizar(Value: iFormaPagamento): iFinalizaVenda;
     function formaPagamento: iFormaPagamento;
   end;
