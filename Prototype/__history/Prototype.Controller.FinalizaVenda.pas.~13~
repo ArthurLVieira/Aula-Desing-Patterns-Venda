@@ -10,7 +10,8 @@ type
     iFormaPagamento)
   private
     FTotalVenda: Currency;
-    FlistaVenda: TDictionary<string, Currency>;
+    FFormaPagamento: string;
+    FlistaVenda: TDictionary<TList<string>, ivenda>;
   public
     constructor Create;
     destructor Destroy; override;
@@ -33,21 +34,17 @@ uses
 
 function TModelFinalizaVenda.CartaoCredito(Value: Currency): iFormaPagamento;
 begin
-  Result := Self;
-  if not Assigned(Self.CartaoCredito(Value)) then
-    FlistaVenda.Add('CartaoCredito', Value);
+  Result := Self
 end;
 
 function TModelFinalizaVenda.CartaoDebito(Value: Currency): iFormaPagamento;
 begin
-  Result := Self;
-  if not Assigned(Self.CartaoDebito(Value)) then
-    FlistaVenda.Add('CartaoDebito', Value);
+
 end;
 
 constructor TModelFinalizaVenda.Create;
 begin
-  FlistaVenda := TDictionary<string, Currency>.Create;
+  FlistaVenda := TDictionary<string, ivenda>.Create;
 end;
 
 destructor TModelFinalizaVenda.Destroy;
@@ -59,9 +56,7 @@ end;
 
 function TModelFinalizaVenda.Dinheriro(Value: Currency): iFormaPagamento;
 begin
-  Result := Self;
-  if not Assigned(Self.Dinheriro(Value)) then
-    FlistaVenda.Add('Dinheiro', Value);
+
 end;
 
 function TModelFinalizaVenda.Finalizar: Currency;
@@ -81,9 +76,7 @@ end;
 
 function TModelFinalizaVenda.Pix(Value: Currency): iFormaPagamento;
 begin
-  Result := Self;
-  if not Assigned(Self.Pix(Value)) then
-    FlistaVenda.Add('Pix', Value);
+
 end;
 
 function TModelFinalizaVenda.TotalVenda(Value: ivenda): iFinalizaVenda;
