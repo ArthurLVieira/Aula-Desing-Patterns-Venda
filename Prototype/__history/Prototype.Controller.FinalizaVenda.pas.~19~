@@ -12,7 +12,7 @@ type
     iFormaPagamento)
   private
     FVenda: iVenda;
-    FlistaVenda: TDictionary<string, Currency>;
+    FlistaVenda: TDictionary<FormasPagamento, Currency>;
   public
     constructor Create(Value: iVenda);
     destructor Destroy; override;
@@ -36,20 +36,20 @@ function TModelFinalizaVenda.CartaoCredito(Value: Currency): iFormaPagamento;
 begin
   Result := Self;
   if not Assigned(Self.CartaoCredito(Value)) then
-    FlistaVenda.Add('CartaoCredito', Value);
+    FlistaVenda.Add(FormasPagamento.CartaoCredito, Value);
 end;
 
 function TModelFinalizaVenda.CartaoDebito(Value: Currency): iFormaPagamento;
 begin
   Result := Self;
   if not Assigned(Self.CartaoDebito(Value)) then
-    FlistaVenda.Add('CartaoDebito', Value);
+    FlistaVenda.Add(FormasPagamento.CartaoDebito, Value);
 end;
 
 constructor TModelFinalizaVenda.Create(Value: iVenda);
 begin
   FVenda := Value;
-  FlistaVenda := TDictionary<string, Currency>.Create;
+  FlistaVenda := TDictionary<FormasPagamento, Currency>.Create;
 end;
 
 destructor TModelFinalizaVenda.Destroy;
@@ -63,7 +63,7 @@ function TModelFinalizaVenda.Dinheriro(Value: Currency): iFormaPagamento;
 begin
   Result := Self;
   if not Assigned(Self.Dinheriro(Value)) then
-    FlistaVenda.Add('Dinheriro', Value);
+    FlistaVenda.Add(FormasPagamento.Dinheiro, Value);
 end;
 
 function TModelFinalizaVenda.Finalizar: Currency;
@@ -89,7 +89,7 @@ function TModelFinalizaVenda.Pix(Value: Currency): iFormaPagamento;
 begin
   Result := Self;
   if not Assigned(Self.Pix(Value)) then
-    FlistaVenda.Add('Pix', Value);
+    FlistaVenda.Add(FormasPagamento.Pix, Value);
 end;
 
 end.

@@ -6,6 +6,7 @@ uses
   System.Generics.Collections;
 
 type
+  TEvtDisplay = procedure(Value: string) of object;
 
   iPrototype<T> = interface
     ['{5ED69F77-1A7E-422F-97FB-B40ADD23A685}']
@@ -40,19 +41,22 @@ type
     function Total: Currency;
   end;
 
+    iFormaPagamento = interface
+    ['{3E6AE97B-C1AA-4A89-8155-C4808ED80DCB}']
+    function Pix(Value: Currency): iFormaPagamento;
+    function Dinheriro(Value: Currency): iFormaPagamento;
+    function CartaoCredito(Value: Currency): iFormaPagamento;
+    function CartaoDebito(Value: Currency): iFormaPagamento;
+  end;
+
   iFinalizaVenda = interface
     ['{CE1A23D9-D802-466A-96B9-9F90B1DE212E}']
-
+    function Add(Value: TDictionary<string, iFormaPagamento>): iVenda;
+    function Finalizar: Currency;
+    function formaPagamento: iFormaPagamento;
   end;
 
-  iFormaPagamento = interface
-    ['{3E6AE97B-C1AA-4A89-8155-C4808ED80DCB}']
-    function Pix: iFormaPagamento;
-    function Dinheriro: iFormaPagamento;
-    function CartaoCredito: iFormaPagamento;
-    function CartaoDebito: iFormaPagamento;
-    function &End: iVenda;
-  end;
+
 
 implementation
 
