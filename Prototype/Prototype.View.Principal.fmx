@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   ActiveControl = Edit1
   Caption = 'Form1'
-  ClientHeight = 535
+  ClientHeight = 604
   ClientWidth = 685
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -24,7 +24,7 @@ object Form1: TForm1
   end
   object Button1: TButton
     Position.X = 8.000000000000000000
-    Position.Y = 238.000000000000000000
+    Position.Y = 273.000000000000000000
     Size.Width = 100.000000000000000000
     Size.Height = 27.000000000000000000
     Size.PlatformDefault = False
@@ -35,7 +35,7 @@ object Form1: TForm1
   end
   object Button2: TButton
     Position.X = 128.000000000000000000
-    Position.Y = 238.000000000000000000
+    Position.Y = 273.000000000000000000
     Size.Width = 100.000000000000000000
     Size.Height = 27.000000000000000000
     Size.PlatformDefault = False
@@ -117,41 +117,41 @@ object Form1: TForm1
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
     Position.X = 288.000000000000000000
-    Position.Y = 296.000000000000000000
+    Position.Y = 320.000000000000000000
     Size.Width = 353.000000000000000000
-    Size.Height = 177.000000000000000000
+    Size.Height = 225.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 14
     Viewport.Width = 349.000000000000000000
-    Viewport.Height = 173.000000000000000000
+    Viewport.Height = 221.000000000000000000
   end
   object Edit5: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 15
     Position.X = 128.000000000000000000
-    Position.Y = 296.000000000000000000
+    Position.Y = 320.000000000000000000
   end
   object Edit6: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 16
     Position.X = 128.000000000000000000
-    Position.Y = 336.000000000000000000
+    Position.Y = 360.000000000000000000
   end
   object Edit7: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 17
     Position.X = 128.000000000000000000
-    Position.Y = 376.000000000000000000
+    Position.Y = 400.000000000000000000
   end
   object Edit8: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 18
     Position.X = 128.000000000000000000
-    Position.Y = 416.000000000000000000
+    Position.Y = 440.000000000000000000
   end
   object Label6: TLabel
     Position.X = 8.000000000000000000
-    Position.Y = 296.000000000000000000
+    Position.Y = 320.000000000000000000
     Size.Width = 120.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -160,7 +160,7 @@ object Form1: TForm1
   end
   object Label7: TLabel
     Position.X = 8.000000000000000000
-    Position.Y = 336.000000000000000000
+    Position.Y = 360.000000000000000000
     Size.Width = 120.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -169,7 +169,7 @@ object Form1: TForm1
   end
   object Label8: TLabel
     Position.X = 8.000000000000000000
-    Position.Y = 376.000000000000000000
+    Position.Y = 400.000000000000000000
     Size.Width = 120.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -178,7 +178,7 @@ object Form1: TForm1
   end
   object Label9: TLabel
     Position.X = 8.000000000000000000
-    Position.Y = 416.000000000000000000
+    Position.Y = 440.000000000000000000
     Size.Width = 120.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -187,11 +187,21 @@ object Form1: TForm1
   end
   object Button3: TButton
     Position.X = 8.000000000000000000
-    Position.Y = 451.000000000000000000
+    Position.Y = 523.000000000000000000
     Size.Width = 220.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 23
     Text = 'Finalizar'
+    TextSettings.Trimming = None
+  end
+  object Label10: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 472.000000000000000000
+    Size.Width = 220.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
+    TabOrder = 24
   end
 end
