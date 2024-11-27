@@ -50,7 +50,7 @@ begin
   try
 
   except
-    raise Exception.Create('Pagamento Difere do total da venda');
+    raise Exception.Create('O pagamento Difere do total da venda');
   end;
 
 end;
