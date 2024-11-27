@@ -134,7 +134,7 @@ object Form1: TForm1
   object Edit6: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 16
-    Position.X = 136.000000000000000000
+    Position.X = 128.000000000000000000
     Position.Y = 360.000000000000000000
   end
   object Edit7: TEdit

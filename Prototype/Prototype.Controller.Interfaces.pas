@@ -51,11 +51,10 @@ type
 
   iFinalizaVenda = interface
     ['{CE1A23D9-D802-466A-96B9-9F90B1DE212E}']
+    function Total: Currency;
     function Finalizar: string;
-    function formaPagamento: iFormaPagamento;
-    function listaVenda: TDictionary<string, Currency>;
-//    function Display(Value: TEvtDisplay): iFinalizaVenda;
-//    function Exibir: TEvtDisplay;
+    function Add(Value: iFormaPagamento): iFinalizaVenda;
+    function FormaPagamento: TList<iFormaPagamento>;
   end;
 
 implementation

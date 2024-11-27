@@ -101,15 +101,14 @@ begin
       FormatCurr('   R$ #,##0.00', FListaItem[I].Total));
 
   Label4.Text := FormatCurr('R$ #,##0.00', FVenda.Total);
-  //Label10.Text := FormatCurr('R$ #,##0.00', FFinalizaVenda.Finalizar);
+  Label10.Text := FormatCurr('R$ #,##0.00', FFinalizaVenda.Total);
 end;
 
 procedure TForm1.ExibirVenda;
 var
   I: Integer;
 begin
-  for I := 0 to Pred(FFinalizaVenda.listaVenda.Count) do
-    Memo2.Lines.Add(FFinalizaVenda.Finalizar);
+
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
