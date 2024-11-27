@@ -20,6 +20,9 @@ type
 
 implementation
 
+uses
+  System.SysUtils;
+
 { TVenda }
 
 function TVenda.Add(Value: TList<iITens>): iVenda;
@@ -49,10 +52,13 @@ function TVenda.Total: Currency;
 var
   I: Integer;
 begin
-  Result := 0;
-  for I := 0 to Pred(FItens.Count) do
-    Result := Result + FItens[I].Total;
-
+  try
+    Result := 0;
+    for I := 0 to Pred(FItens.Count) do
+      Result := Result + FItens[I].Total;
+  except
+    raise Exception.Create('Nenhum Item foi passado!');
+  end;
 end;
 
 end.

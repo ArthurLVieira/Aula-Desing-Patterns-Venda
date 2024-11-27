@@ -8,7 +8,8 @@ uses
   Prototype.Controller.Interfaces in 'Prototype.Controller.Interfaces.pas',
   Prototype.Model.Strategy in 'Prototype.Model.Strategy.pas',
   Prototype.Controller.Venda in 'Prototype.Controller.Venda.pas',
-  Prototype.Controller.FinalizaVenda in 'Prototype.Controller.FinalizaVenda.pas';
+  Prototype.Controller.FinalizaVenda in 'Prototype.Controller.FinalizaVenda.pas',
+  Prototype.Model.FormaPagamento in 'Prototype.Model.FormaPagamento.pas';
 
 {$R *.res}
 

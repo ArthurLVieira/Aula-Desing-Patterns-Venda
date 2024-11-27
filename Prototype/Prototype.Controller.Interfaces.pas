@@ -41,21 +41,22 @@ type
     function Total: Currency;
   end;
 
-    iFormaPagamento = interface
+  iFormaPagamento = interface
     ['{3E6AE97B-C1AA-4A89-8155-C4808ED80DCB}']
-    function Pix(Value: Currency): iFormaPagamento;
-    function Dinheriro(Value: Currency): iFormaPagamento;
-    function CartaoCredito(Value: Currency): iFormaPagamento;
-    function CartaoDebito(Value: Currency): iFormaPagamento;
+    function SetFormaPagamento(Value: string): iFormaPagamento;
+    function SetFormsValor(Value: Currency): iFormaPagamento;
+    function GetFormaPagamento: string;
+    function GetFormaValor: Currency;
   end;
 
   iFinalizaVenda = interface
     ['{CE1A23D9-D802-466A-96B9-9F90B1DE212E}']
-    function Finalizar: Currency;
+    function Finalizar: string;
     function formaPagamento: iFormaPagamento;
+    function listaVenda: TDictionary<string, Currency>;
+//    function Display(Value: TEvtDisplay): iFinalizaVenda;
+//    function Exibir: TEvtDisplay;
   end;
-
-
 
 implementation
 

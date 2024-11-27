@@ -134,7 +134,7 @@ object Form1: TForm1
   object Edit6: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 16
-    Position.X = 128.000000000000000000
+    Position.X = 136.000000000000000000
     Position.Y = 360.000000000000000000
   end
   object Edit7: TEdit
@@ -187,13 +187,14 @@ object Form1: TForm1
   end
   object Button3: TButton
     Position.X = 8.000000000000000000
-    Position.Y = 523.000000000000000000
+    Position.Y = 518.000000000000000000
     Size.Width = 220.000000000000000000
-    Size.Height = 22.000000000000000000
+    Size.Height = 27.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 23
     Text = 'Finalizar'
     TextSettings.Trimming = None
+    OnClick = Button3Click
   end
   object Label10: TLabel
     Position.X = 8.000000000000000000

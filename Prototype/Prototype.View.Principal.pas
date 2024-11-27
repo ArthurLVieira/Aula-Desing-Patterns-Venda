@@ -38,12 +38,16 @@ type
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
-    FLista: TList<iITens>;
+    FListaItem: TList<iITens>;
     FVenda: iVenda;
+    FFormaDinheiro: iFormaPagamento;
+    FListaFormaPagamento: TList<iFormaPagamento>;
     FFinalizaVenda: iFinalizaVenda;
     procedure Exibir;
+    procedure ExibirVenda;
   public
     { Public declarations }
   end;
@@ -55,7 +59,7 @@ implementation
 
 {$R *.fmx}
 
-uses Prototype.Controller.FinalizaVenda;
+uses Prototype.Controller.FinalizaVenda, Prototype.Model.FormaPagamento;
 
 procedure TForm1.Button1Click(Sender: TObject);
 var
@@ -66,14 +70,21 @@ begin
   Item.Descricao := Edit2.Text;
   Item.Preco := StrToCurr(Edit3.Text);
   Item.Quantidade := StrToCurr(Edit4.Text);
-  FLista.Add(Item);
+  FListaItem.Add(Item);
   Exibir;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-  FLista.Add(FLista[Pred(FLista.Count)].Prototype.Clone);
+  FListaItem.Add(FListaItem[Pred(FListaItem.Count)].Prototype.Clone);
   Exibir;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  FFormaDinheiro.SetFormaPagamento('Dinheiro');
+  FFormaDinheiro.SetFormsValor(StrToCurr(Edit5.Text));
+  FListaFormaPagamento.Add(FFormaDinheiro);
 end;
 
 procedure TForm1.Exibir;
@@ -81,22 +92,31 @@ var
   I: Integer;
 begin
   Memo1.Lines.Clear;
-  FVenda.Add(FLista);
-  for I := 0 to Pred(FLista.Count) do
-    Memo1.Lines.Add(FLista[I].Codigo.ToString + '   ' + FLista[I].Descricao +
-      '   ' + CurrToStr(FLista[I].Quantidade) + FormatCurr('   R$ #,##0.00',
-      FLista[I].Preco) + FormatCurr('   R$ -#,##0.00', FLista[I].Desconto) +
-      FormatCurr('   R$ #,##0.00', FLista[I].PrecoVenda) +
-      FormatCurr('   R$ #,##0.00', FLista[I].Total));
+  FVenda.Add(FListaItem);
+  for I := 0 to Pred(FListaItem.Count) do
+    Memo1.Lines.Add(FListaItem[I].Codigo.ToString + '   ' + FListaItem[I].Descricao +
+      '   ' + CurrToStr(FListaItem[I].Quantidade) + FormatCurr('   R$ #,##0.00',
+      FListaItem[I].Preco) + FormatCurr('   R$ -#,##0.00', FListaItem[I].Desconto) +
+      FormatCurr('   R$ #,##0.00', FListaItem[I].PrecoVenda) +
+      FormatCurr('   R$ #,##0.00', FListaItem[I].Total));
 
   Label4.Text := FormatCurr('R$ #,##0.00', FVenda.Total);
-  Label10.Text := FormatCurr('R$ #,##0.00', FFinalizaVenda.Finalizar);
+  //Label10.Text := FormatCurr('R$ #,##0.00', FFinalizaVenda.Finalizar);
+end;
+
+procedure TForm1.ExibirVenda;
+var
+  I: Integer;
+begin
+  for I := 0 to Pred(FFinalizaVenda.listaVenda.Count) do
+    Memo2.Lines.Add(FFinalizaVenda.Finalizar);
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  FLista := TList<iITens>.Create;
+  FListaItem := TList<iITens>.Create;
   FVenda := TVenda.New;
+  FFormaDinheiro := TModelFormaPagamento.New;
   FFinalizaVenda := TModelFinalizaVenda.New(FVenda);
 end;
 

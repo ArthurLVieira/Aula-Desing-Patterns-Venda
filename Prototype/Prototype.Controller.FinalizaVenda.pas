@@ -17,12 +17,10 @@ type
     constructor Create(Value: iVenda);
     destructor Destroy; override;
     class function New(Value: iVenda): iFinalizaVenda;
-    function Finalizar: Currency;
+    function Finalizar: string;
     function formaPagamento: iFormaPagamento;
-    function Pix(Value: Currency): iFormaPagamento;
-    function Dinheriro(Value: Currency): iFormaPagamento;
-    function CartaoCredito(Value: Currency): iFormaPagamento;
-    function CartaoDebito(Value: Currency): iFormaPagamento;
+    function Add(FomaPagamento: string; Value: Currency): iFormaPagamento;
+    function listaVenda: TDictionary<string, Currency>;
   end;
 
 implementation
@@ -32,18 +30,11 @@ uses
 
 { TModelFinalizaVenda }
 
-function TModelFinalizaVenda.CartaoCredito(Value: Currency): iFormaPagamento;
+function TModelFinalizaVenda.Add(FomaPagamento: string;
+  Value: Currency): iFormaPagamento;
 begin
   Result := Self;
-  if not Assigned(Self.CartaoCredito(Value)) then
-    FlistaVenda.Add('CartaoCredito', Value);
-end;
-
-function TModelFinalizaVenda.CartaoDebito(Value: Currency): iFormaPagamento;
-begin
-  Result := Self;
-  if not Assigned(Self.CartaoDebito(Value)) then
-    FlistaVenda.Add('CartaoDebito', Value);
+  FlistaVenda.Add(FomaPagamento, Value);
 end;
 
 constructor TModelFinalizaVenda.Create(Value: iVenda);
@@ -59,20 +50,13 @@ begin
   inherited;
 end;
 
-function TModelFinalizaVenda.Dinheriro(Value: Currency): iFormaPagamento;
-begin
-  Result := Self;
-  if not Assigned(Self.Dinheriro(Value)) then
-    FlistaVenda.Add('Dinheriro', Value);
-end;
-
-function TModelFinalizaVenda.Finalizar: Currency;
+function TModelFinalizaVenda.Finalizar: string;
 var
   I: Integer;
 begin
-  for I := 0 to FlistaVenda.TryGetValue('Dinheiro', Result) do
+  for I := 0 to Pred(FlistaVenda.Count) do
+    Result := ' Dinheriro: ' + FormatCurr('R$ #,##0.00', FlistaVenda.Items['Dinheriro'])
 
-  Result := FVenda.Total;
 end;
 
 function TModelFinalizaVenda.formaPagamento: iFormaPagamento;
@@ -80,16 +64,14 @@ begin
   Result := Self;
 end;
 
+function TModelFinalizaVenda.listaVenda: TDictionary<string, Currency>;
+begin
+  Result := FlistaVenda;
+end;
+
 class function TModelFinalizaVenda.New(Value: iVenda): iFinalizaVenda;
 begin
   Result := Self.Create(Value);
-end;
-
-function TModelFinalizaVenda.Pix(Value: Currency): iFormaPagamento;
-begin
-  Result := Self;
-  if not Assigned(Self.Pix(Value)) then
-    FlistaVenda.Add('Pix', Value);
 end;
 
 end.

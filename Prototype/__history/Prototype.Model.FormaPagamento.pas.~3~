@@ -1,0 +1,64 @@
+unit Prototype.Model.FormaPagamento;
+
+interface
+
+uses
+  Prototype.Controller.Interfaces;
+
+type
+
+  TModelFormaPagamento = class(TInterfacedObject, iFormaPagamento)
+  private
+    FFormaPagamento: string;
+    FFormaValor: Currency;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iFormaPagamento;
+    function SetFormaPagamento(Value: string): iFormaPagamento;
+    function SetFormsValor(Value: Currency): iFormaPagamento;
+    function GetFormaPagamento: string;
+    function GetFormaValor: Currency;
+  end;
+
+implementation
+
+{ TModelFormaPagamento }
+
+constructor TModelFormaPagamento.Create;
+begin
+
+end;
+
+destructor TModelFormaPagamento.Destroy;
+begin
+
+  inherited;
+end;
+
+function TModelFormaPagamento.GetFormaPagamento: string;
+begin
+
+end;
+
+function TModelFormaPagamento.GetFormaValor: Currency;
+begin
+
+end;
+
+class function TModelFormaPagamento.New: iFormaPagamento;
+begin
+  Result := Self.Create;
+end;
+
+function TModelFormaPagamento.SetFormaPagamento(Value: string): iFormaPagamento;
+begin
+
+end;
+
+function TModelFormaPagamento.SetFormsValor(Value: Currency): iFormaPagamento;
+begin
+
+end;
+
+end.

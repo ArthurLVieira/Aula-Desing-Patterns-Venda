@@ -1,0 +1,208 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  ActiveControl = Edit1
+  Caption = 'Form1'
+  ClientHeight = 604
+  ClientWidth = 685
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 128.000000000000000000
+    Position.Y = 56.000000000000000000
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 128.000000000000000000
+    Position.Y = 96.000000000000000000
+  end
+  object Button1: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 273.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Vender'
+    TextSettings.Trimming = None
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Position.X = 128.000000000000000000
+    Position.Y = 273.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Clonar'
+    TextSettings.Trimming = None
+    OnClick = Button2Click
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 288.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 353.000000000000000000
+    Size.Height = 209.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Viewport.Width = 349.000000000000000000
+    Viewport.Height = 205.000000000000000000
+  end
+  object Edit3: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 128.000000000000000000
+    Position.Y = 136.000000000000000000
+  end
+  object Label2: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Descri'#231#227'o:'
+    TabOrder = 8
+  end
+  object Label3: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Pre'#231'o:'
+    TabOrder = 10
+  end
+  object Label1: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'C'#243'digo:'
+    TabOrder = 11
+  end
+  object Label4: TLabel
+    Position.X = 288.000000000000000000
+    Position.Y = 273.000000000000000000
+    Size.Width = 353.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
+    TabOrder = 13
+  end
+  object Edit4: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 128.000000000000000000
+    Position.Y = 176.000000000000000000
+  end
+  object Label5: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Quantidade:'
+    TabOrder = 9
+  end
+  object Memo2: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 288.000000000000000000
+    Position.Y = 320.000000000000000000
+    Size.Width = 353.000000000000000000
+    Size.Height = 225.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Viewport.Width = 349.000000000000000000
+    Viewport.Height = 221.000000000000000000
+  end
+  object Edit5: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 15
+    Position.X = 128.000000000000000000
+    Position.Y = 320.000000000000000000
+  end
+  object Edit6: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 16
+    Position.X = 136.000000000000000000
+    Position.Y = 360.000000000000000000
+  end
+  object Edit7: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 17
+    Position.X = 128.000000000000000000
+    Position.Y = 400.000000000000000000
+  end
+  object Edit8: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 18
+    Position.X = 128.000000000000000000
+    Position.Y = 440.000000000000000000
+  end
+  object Label6: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 320.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Dinheiro'
+    TabOrder = 22
+  end
+  object Label7: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 360.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Cart'#227'o D'#233'bito'
+    TabOrder = 21
+  end
+  object Label8: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 400.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Cart'#227'o Cr'#233'dito'
+    TabOrder = 20
+  end
+  object Label9: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 440.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Pix'
+    TabOrder = 19
+  end
+  object Button3: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 523.000000000000000000
+    Size.Width = 220.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 23
+    Text = 'Finalizar'
+    TextSettings.Trimming = None
+    OnClick = Button3Click
+  end
+  object Label10: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 472.000000000000000000
+    Size.Width = 220.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
+    TabOrder = 24
+  end
+end

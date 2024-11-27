@@ -307,6 +307,7 @@
         <DCCReference Include="Prototype.Model.Strategy.pas"/>
         <DCCReference Include="Prototype.Controller.Venda.pas"/>
         <DCCReference Include="Prototype.Controller.FinalizaVenda.pas"/>
+        <DCCReference Include="Prototype.Model.FormaPagamento.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -345,6 +346,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Win32\Debug\PrjPrototype.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Debug\PrjPrototype.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>PrjPrototype.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>
