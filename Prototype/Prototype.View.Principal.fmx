@@ -147,7 +147,7 @@ object Form1: TForm1
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 18
     Position.X = 128.000000000000000000
-    Position.Y = 440.000000000000000000
+    Position.Y = 442.000000000000000000
   end
   object Label6: TLabel
     Position.X = 8.000000000000000000

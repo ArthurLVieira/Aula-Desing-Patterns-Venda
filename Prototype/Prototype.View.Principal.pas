@@ -43,8 +43,7 @@ type
     { Private declarations }
     FListaItem: TList<iITens>;
     FVenda: iVenda;
-    FFormaDinheiro: iFormaPagamento;
-    FListaFormaPagamento: TList<iFormaPagamento>;
+    FFormaDinheiro, FFormaPix, FFormaCartaoDebito: iFormaPagamento;
     FFinalizaVenda: iFinalizaVenda;
     procedure Exibir;
     procedure ExibirVenda;
@@ -84,7 +83,17 @@ procedure TForm1.Button3Click(Sender: TObject);
 begin
   FFormaDinheiro.SetFormaPagamento('Dinheiro');
   FFormaDinheiro.SetFormsValor(StrToCurr(Edit5.Text));
-  FListaFormaPagamento.Add(FFormaDinheiro);
+  FFinalizaVenda.Add(FFormaDinheiro);
+
+  FFormaPix.SetFormaPagamento('Pix');
+  FFormaPix.SetFormsValor(StrToCurr(Edit5.Text));
+  FFinalizaVenda.Add(FFormaPix);
+
+  FFormaCartaoDebito.SetFormaPagamento('CartaoDebito');
+  FFormaCartaoDebito.SetFormsValor(StrToCurr(Edit5.Text));
+  FFinalizaVenda.Add(FFormaCartaoDebito);
+
+  Edit5.Text := FormatCurr('   R$ #,##0.00', FFinalizaVenda.Finalizar);
 end;
 
 procedure TForm1.Exibir;
@@ -101,7 +110,7 @@ begin
       FormatCurr('   R$ #,##0.00', FListaItem[I].Total));
 
   Label4.Text := FormatCurr('R$ #,##0.00', FVenda.Total);
-  Label10.Text := FormatCurr('R$ #,##0.00', FFinalizaVenda.Total);
+  Label10.Text := FormatCurr('R$ #,##0.00', FFinalizaVenda.Finalizar);
 end;
 
 procedure TForm1.ExibirVenda;
