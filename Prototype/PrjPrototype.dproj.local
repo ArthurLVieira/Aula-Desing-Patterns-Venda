@@ -19,6 +19,8 @@
     <Transaction>2024/11/25 09:38:44.000.265,=C:\Users\user\Documents\GitHub\Aula-Desing-Patterns-Venda\Prototype\Unit1.pas</Transaction>
     <Transaction>2024/11/25 09:39:18.000.901,C:\Users\user\Documents\GitHub\Aula-Desing-Patterns-Venda\Prototype\Unit1.pas=C:\Users\user\Documents\GitHub\Aula-Desing-Patterns-Venda\Prototype\Prototype.Model.Forma.Dinheiro.pas</Transaction>
     <Transaction>2024/11/25 09:44:00.000.347,C:\Users\user\Documents\GitHub\Aula-Desing-Patterns-Venda\Prototype\Prototype.Model.Forma.Dinheiro.pas=</Transaction>
+    <Transaction>2024/11/27 00:30:42.000.619,=C:\Users\user\Documents\GitHub\Aula-Desing-Patterns-Venda\Prototype\Unit1.pas</Transaction>
+    <Transaction>2024/11/27 00:34:25.000.414,C:\Users\user\Documents\GitHub\Aula-Desing-Patterns-Venda\Prototype\Unit1.pas=C:\Users\user\Documents\GitHub\Aula-Desing-Patterns-Venda\Prototype\Prototype.Model.FormaPagamento.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="activity-1.7.2.dex.jar"/>

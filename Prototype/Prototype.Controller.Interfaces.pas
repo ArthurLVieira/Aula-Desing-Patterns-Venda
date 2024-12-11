@@ -7,6 +7,7 @@ uses
 
 type
   TEvtDisplay = procedure(Value: string) of object;
+  TFormaPagamento = (dinheiro, debito, credito, pix);
 
   iPrototype<T> = interface
     ['{5ED69F77-1A7E-422F-97FB-B40ADD23A685}']
@@ -39,6 +40,13 @@ type
     ['{F374058E-C54F-4818-86FA-46FC950F84E2}']
     function Add(Value: TList<iITens>): iVenda;
     function Total: Currency;
+  end;
+
+  iFinalar = interface
+    ['{914AB0E5-2804-4656-8A15-8943232EFB80}']
+    function Add(Value: iVenda): iFinalar;
+    function Total: Currency;
+    function Finalizar(Value: TFormaPagamento): iFinalar;
   end;
 
   iFormaPagamento = interface
