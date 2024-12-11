@@ -85,11 +85,11 @@ begin
   FFormaDinheiro.SetFormsValor(StrToCurr(Edit5.Text));
   FFinalizaVenda.Add(FFormaDinheiro);
 
-  FFormaPix.SetFormaPagamento('Pix');
+  FFormaPix.SetFormaPagamento('Dinheiro');
   FFormaPix.SetFormsValor(StrToCurr(Edit5.Text));
   FFinalizaVenda.Add(FFormaPix);
 
-  FFormaCartaoDebito.SetFormaPagamento('CartaoDebito');
+  FFormaCartaoDebito.SetFormaPagamento('Dinheiro');
   FFormaCartaoDebito.SetFormsValor(StrToCurr(Edit5.Text));
   FFinalizaVenda.Add(FFormaCartaoDebito);
 
@@ -110,7 +110,7 @@ begin
       FormatCurr('   R$ #,##0.00', FListaItem[I].Total));
 
   Label4.Text := FormatCurr('R$ #,##0.00', FVenda.Total);
-  Label10.Text := FormatCurr('R$ #,##0.00', FFinalizaVenda.Finalizar);
+  Label10.Text := FormatCurr('R$ #,##0.00', FFinalizaVenda.Total);
 end;
 
 procedure TForm1.ExibirVenda;

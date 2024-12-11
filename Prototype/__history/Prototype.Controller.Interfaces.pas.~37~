@@ -52,7 +52,11 @@ type
   iFinalizaVenda = interface
     ['{CE1A23D9-D802-466A-96B9-9F90B1DE212E}']
     function Total: Currency;
+<<<<<<<< HEAD:Prototype/__history/Prototype.Controller.Interfaces.pas.~37~
     function Finalizar: string;
+========
+    function Finalizar: Currency;
+>>>>>>>> 28007a192f57f48890b64d2c0de8a544a37015b7:Prototype/__history/Prototype.Controller.Interfaces.pas.~38~
     function Add(Value: iFormaPagamento): iFinalizaVenda;
     function FormaPagamento: TList<iFormaPagamento>;
   end;

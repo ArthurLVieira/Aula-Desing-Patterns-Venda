@@ -16,6 +16,7 @@ type
     constructor Create(Value: iVenda);
     destructor Destroy; override;
     class function New(Value: iVenda): iFinalizaVenda;
+    function Total: Currency;
     function Finalizar: Currency;
     function Add(Value: iFormaPagamento): iFinalizaVenda;
     function FormaPagamento: TList<iFormaPagamento>;
@@ -49,18 +50,12 @@ var
   I: Integer;
 begin
   Result := FVenda.Total;
-  if not Assigned(Flista) then
-    raise Exception.Create('nenhuma forma de pagamento informada');
-  for I := 0 to Pred(Flista.Count) do
-    Result := Flista[I].GetFormaValor - Result;
-  {
-    try
+  try
     for I := 0 to Pred(Flista.Count) do
-    Result := Flista[I].GetFormaValor - Result;
-    except
+      Result := Flista[I].GetFormaValor - Result;
+  except
     raise Exception.Create('nenhuma forma de pagamento informada');
-    end;
-  }
+  end;
 end;
 
 function TModelFinalizaVenda.FormaPagamento: TList<iFormaPagamento>;
@@ -71,6 +66,11 @@ end;
 class function TModelFinalizaVenda.New(Value: iVenda): iFinalizaVenda;
 begin
   Result := Self.Create(Value);
+end;
+
+function TModelFinalizaVenda.Total: Currency;
+begin
+  Result := FVenda.Total;
 end;
 
 end.

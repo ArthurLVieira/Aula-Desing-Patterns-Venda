@@ -49,17 +49,16 @@ var
   I: Integer;
 begin
   Result := FVenda.Total;
-  if not Assigned(Flista) then
-    raise Exception.Create('nenhuma forma de pagamento informada');
-  for I := 0 to Pred(Flista.Count) do
-    Result := Flista[I].GetFormaValor - Result;
-  {
-    try
+  if Assigned(Flista) then
     for I := 0 to Pred(Flista.Count) do
-    Result := Flista[I].GetFormaValor - Result;
-    except
+      Result := Flista[I].GetFormaValor - Result;
+  {
+  try
+    for I := 0 to Pred(Flista.Count) do
+      Result := Flista[I].GetFormaValor - Result;
+  except
     raise Exception.Create('nenhuma forma de pagamento informada');
-    end;
+  end;
   }
 end;
 
